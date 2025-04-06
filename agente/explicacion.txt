@@ -1,0 +1,151 @@
+Introduccion a las redes neuronales.
+---
+
+### 1. Época (Epoch)  
+Una época es una pasada completa por todo el conjunto de datos de entrenamiento.  
+Durante una época, la red neuronal ve cada ejemplo del conjunto de entrenamiento una vez.  
+Ejemplo: Si tienes 1000 imágenes y entrenas por 10 épocas, el modelo verá cada imagen 10 veces.
+
+---
+
+### 2. Batch (Lote)  
+Un batch es un subconjunto del conjunto de datos que se utiliza para entrenar el modelo en cada paso.  
+Entrenar en lotes es más eficiente que usar todos los datos a la vez (entrenamiento por lotes en vez de entrenamiento completo).  
+Ejemplo: Si tienes 1000 ejemplos y utilizas un batch de tamaño 100, entonces cada época tendrá 10 batches.
+
+---
+
+### 3. Iteraciones (Iterations)  
+Una iteración es una pasada de un batch a través del modelo.  
+Relación: Número de iteraciones por época = Total de ejemplos / Tamaño del batch.  
+Ejemplo: Con 1000 ejemplos y un batch de 100, hay 10 iteraciones por época.
+
+---
+
+### 4. Backpropagation (Retropropagación)  
+La retropropagación es el algoritmo que ajusta los pesos del modelo después de cada batch.  
+Funciona calculando el error (loss) de la predicción, y luego propagando ese error hacia atrás por la red para actualizar los pesos de forma que se minimice ese error.
+
+---
+
+### 5. Loss (Pérdida)  
+La pérdida es un valor numérico que indica **cuánto se equivocó el modelo** en su predicción.  
+Cuanto más alta sea la pérdida, peor es el rendimiento del modelo para esa predicción.  
+Objetivo: minimizar esta pérdida durante el entrenamiento.
+
+---
+
+### 6. Función de pérdida (Loss Function)  
+Es la fórmula matemática utilizada para calcular la pérdida.  
+Se define según el tipo de problema:  
+- Para clasificación: Cross-Entropy Loss  
+- Para regresión: Mean Squared Error (MSE)  
+La función de pérdida guía el entrenamiento para mejorar el rendimiento del modelo.
+
+---
+
+### 7. Pesos (Weights)  
+Los pesos son valores que la red neuronal aprende durante el entrenamiento.  
+Definen la importancia de cada entrada y determinan cómo se combinan para producir la salida.  
+Se actualizan constantemente para reducir la pérdida.
+
+---
+
+### 8. Sesgo (Bias)  
+El sesgo es un valor adicional que se suma a la salida de una neurona antes de aplicar la función de activación.  
+Su función es dar más flexibilidad al modelo para que pueda ajustar mejor los datos, permitiendo que las neuronas se activen incluso si la suma ponderada es cero.
+
+---
+
+### 9. Gradiente  
+El gradiente es una medida de cuánto cambia la pérdida cuando se modifica un peso o un sesgo.  
+Se calcula mediante derivadas parciales.  
+El algoritmo de entrenamiento usa estos gradientes para ajustar los parámetros en la dirección que más reduce la pérdida (descenso del gradiente).
+
+---
+
+### 10. Función de activación (Activation Function)  
+La función de activación decide si una neurona se activa o no, y transforma la salida de la neurona en una forma útil para la siguiente capa.  
+Introduce no linealida, lo que permite a la red aprender relaciones complejas.  
+Ejemplos comunes:  
+- `ReLU` (Rectified Linear Unit): rápida y eficiente, muy usada en redes profundas.  
+- `Sigmoid`: salida entre 0 y 1, útil para probabilidades.  
+- `tanh`: salida entre -1 y 1, útil cuando se requiere centrado en cero.
+
+---
+
+## Flujo completo de una red neuronal: del dato a la mejora
+
+### 1. Entrada (Input Layer) 
+- Aquí llegan los datos: por ejemplo, una imagen, un número, o un vector.  
+- Cada valor del dato se asigna a una neurona de entrada.  
+- Estos datos no se procesan aún, simplemente se entregan a la siguiente capa.
+
+---
+
+### 2. Capas ocultas (Hidden Layers)  
+- Cada capa oculta tiene **neuronas** que reciben datos desde la capa anterior.  
+- Cada conexión tiene un peso y un sesgo.  
+- La neurona calcula:  
+  
+  z = (w_1 * x_1 + w_2 * x_2 + ... + b)
+  
+- Luego se aplica una función de activación, como ReLU o Sigmoid, para introducir no linealidad.  
+- El resultado se envía a la siguiente capa.
+
+---
+
+### 3. Capa de salida (Output Laye 
+- Esta capa genera el resultado final del modelo.  
+- La forma del resultado depende del problema:  
+  - Clasificación: puede ser una probabilidad (por ejemplo, “80% gato”).  
+  - Regresión: puede ser un número (por ejemplo, “altura = 1.75 m”).
+
+---
+
+## Hasta aquí: la red hace una predicción. Ahora viene el aprendizaje.
+
+---
+
+### 4. Cálculo de la pérdida (Loss Calculation)
+- Se compara la salida de la red con la **respuesta correcta** (etiqueta real).  
+- Se usa una función de pérdida, que devuelve un número:  
+  cuanto más grande, peor fue la predicción.
+
+---
+
+### 5. Backpropagation (Retropropagación del error)  
+Este es el proceso clave para que la red aprenda:
+
+#### a. Se calcula el gradiente:  
+- El modelo analiza cómo cambia la pérdida si cambia cada peso.  
+- Esto se hace usando derivadas (matemáticas del cálculo diferencial).  
+
+#### b. Se actualizan los pesos:  
+- Se ajustan los pesos y sesgos para disminuir la pérdida.  
+- Se usa un algoritmo como descenso del gradiente (gradient descent).  
+- El objetivo es que en la siguiente época, el error sea más bajo.
+
+---
+
+### 6. Repetición durante el entrenamiento  
+- Este proceso (entrada → predicción → pérdida → backpropagation)  
+se repite durante muchas épocas, utilizando muchos batches.  
+- Con el tiempo, el modelo aprende a **generalizar**: da buenas respuestas incluso con datos nuevos.
+
+---
+
+## Resumen visual del flujo
+
+
+Entrada → Capas ocultas → Capa de salida → Predicción
+             ↓                 ↓              ↓
+         Pesos + Bias     Activación       Resultado
+             ↓                                  ↓
+         Comparación con el valor real → Cálculo de pérdida
+                                              ↓
+                                      Backpropagation
+                                              ↓
+                                    Actualización de pesos
+
+
