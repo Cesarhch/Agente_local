@@ -84,7 +84,7 @@ Ejemplos comunes:
 ---
 
 ### 2. Capas ocultas (Hidden Layers)  
-- Cada capa oculta tiene **neuronas** que reciben datos desde la capa anterior.  
+- Cada capa oculta tiene neuronas que reciben datos desde la capa anterior.  
 - Cada conexión tiene un peso y un sesgo.  
 - La neurona calcula:  
   
@@ -108,7 +108,7 @@ Ejemplos comunes:
 ---
 
 ### 4. Cálculo de la pérdida (Loss Calculation)
-- Se compara la salida de la red con la **respuesta correcta** (etiqueta real).  
+- Se compara la salida de la red con la respuesta correcta (etiqueta real).  
 - Se usa una función de pérdida, que devuelve un número:  
   cuanto más grande, peor fue la predicción.
 
@@ -131,7 +131,7 @@ Este es el proceso clave para que la red aprenda:
 ### 6. Repetición durante el entrenamiento  
 - Este proceso (entrada → predicción → pérdida → backpropagation)  
 se repite durante muchas épocas, utilizando muchos batches.  
-- Con el tiempo, el modelo aprende a **generalizar**: da buenas respuestas incluso con datos nuevos.
+- Con el tiempo, el modelo aprende a generalizar: da buenas respuestas incluso con datos nuevos.
 
 ---
 
