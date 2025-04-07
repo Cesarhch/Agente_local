@@ -1,4 +1,4 @@
-Introduccion a las redes neuronales.
+Introduccion a las redes neuronales. Explicacion del pipeline de una inferencia.
 ---
 
 ### 1. Época (Epoch)  
