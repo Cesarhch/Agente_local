@@ -63,6 +63,5 @@ Cuando se solicita una lectura, el sensor responde con una secuencia de bits cod
 
 ## Esquema de Conexión
 
-A continuación se muestra un ejemplo visual de cómo conectar el sensor DHT11 a una placa ESP32:
-
-![Esquema de conexión ESP32 y DHT11](./A_schematic_digital_illustration_displays_an_ESP32.png)
+Informacion en la pagina web infootec.net:
+https://www.infootec.net/dht11-sensor/
