@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "DHT.h"
+#include <DHT.h>
 
 // Configuración del sensor DHT
 #define DHTPIN 33
