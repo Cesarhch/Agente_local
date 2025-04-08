@@ -1,0 +1,2 @@
+En la siguiente direccion esta disponible la descarga del driver cp2102 de la pagina oficial Silicon Labs:
+https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads
