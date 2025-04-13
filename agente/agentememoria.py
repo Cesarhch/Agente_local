@@ -5,11 +5,11 @@ import sys
 
 # 1. Configuración del modelo con streaming
 phi4 = ChatOllama(
-    model="phi4",
+    model="phi3",
     temperature=0.3,
     stream=True,  # Habilitar respuestas en streaming
 )
-embeddings = OllamaEmbeddings(model="mxbai-embed-large")
+embeddings = OllamaEmbeddings(model="nomic-embed-text")
 
 # 2. Memoria conversacional con límite de 10 mensajes
 message_history = ChatMessageHistory()
