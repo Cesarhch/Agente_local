@@ -7,8 +7,8 @@ import os
 import keyboard  # Para detectar la barra espaciadora
 
 # Configuración del modelo y embeddings
-phi3 = ChatOllama(model="phi4", temperature=0.3, stream=True)
-embeddings = OllamaEmbeddings(model="mxbai-embed-large")  # Mejores embeddings
+phi3 = ChatOllama(model="phi3", temperature=0.3, stream=True)
+embeddings = OllamaEmbeddings(model="nomic-embed-text")  # para descargar el modelo:ollama pull nomic-embed-text
 
 # Cargar documentos
 def load_documents(folder_path="rag"):
@@ -58,7 +58,7 @@ def query_rag(question):
 
     # Crear la plantilla correctamente para el sistema
     prompt_template = ChatPromptTemplate.from_messages([ 
-        ("system", "Usa este contexto para responder:\n{context}"),
+        ("system", "Las respuestas deben ser breves y concisas, las respuestas solo seran con respecto a la pregunta sin decir mas informacion:\n{context}"),
         ("human", "{question}")
     ])
 
