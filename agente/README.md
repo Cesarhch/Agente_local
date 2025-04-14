@@ -13,7 +13,8 @@ Antes de ejecutar el chatbot, asegúrate de tener instalado Python 3.10+ y las d
 
 ### 1. Crear un entorno virtual (opcional pero recomendado)
 ```sh
-conda create --name chatbot_env python=3.10
+conda create --name chatbot_env python=3.10.16 (o tambien puedes escribir: conda create -n cursoIA python=3.10.16)
+
 conda activate chatbot_env
 ```
 
