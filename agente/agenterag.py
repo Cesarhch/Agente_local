@@ -11,6 +11,17 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.runnables import RunnablePassthrough
 import os
 
+# pip install \
+#  langchain \
+#  langchain-core \
+#  langchain-community \
+#  langchain-text-splitters \
+#  langchain-ollama \
+#  faiss-cpu \
+#  pypdf \
+#  tiktoken
+
+
 # 1. Configuración del modelo
 phi3 = ChatOllama(
     model="phi3",
