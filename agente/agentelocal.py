@@ -1,6 +1,8 @@
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+# pip install langchain langchain-core langchain-community langchain-ollama
+# conda install python=3.10.16
 
 # 1. Configura el modelo Phi-3
 phi3 = ChatOllama(
