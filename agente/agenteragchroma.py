@@ -7,6 +7,7 @@ import os
 import keyboard  # Para detectar la barra espaciadora
 
 # pip install langchain langchain-core langchain-community langchain-text-splitters langchain-ollama chromadb pypdf keyboard
+# ollama pull nomic-embed-text
 
 # Configuración del modelo y embeddings
 phi3 = ChatOllama(model="phi3", temperature=0.3, stream=True)
