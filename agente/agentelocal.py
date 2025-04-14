@@ -36,6 +36,12 @@ def main():
         print("\nLara:", end="", flush=True)
         
         for chunk in chain.stream({"user_input": user_input}):
+            
+            # Detecta si se presiona la barra espaciadora para detener la impresión
+            if keyboard.is_pressed('space'):
+              print("\n¡Interrumpido por el usuario!")
+              break
+        
             print(chunk, end="", flush=True)
 
 if __name__ == "__main__":
