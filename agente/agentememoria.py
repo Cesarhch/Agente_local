@@ -3,6 +3,8 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.chat_message_histories import ChatMessageHistory
 import sys
 
+# pip install langchain langchain-core langchain-community langchain-ollama
+
 # 1. Configuración del modelo con streaming
 phi4 = ChatOllama(
     model="phi3",
