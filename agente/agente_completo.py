@@ -8,6 +8,8 @@ import os
 import keyboard
 import sys
 
+# pip install langchain langchain-core langchain-community langchain-text-splitters langchain-ollama chromadb pypdf keyboard
+
 # Configuración del modelo y embeddings
 modelo = ChatOllama(model="phi3", temperature=0.3, stream=True)
 embeddings = OllamaEmbeddings(model="nomic-embed-text")
